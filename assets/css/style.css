@@ -1,0 +1,251 @@
+main {
+  height: 100vh;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.header .row.split {
+  background-color: var(--White);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  padding: 1.2rem;
+  align-items: center;
+}
+
+
+.header .row.split .flex-col:first-child {
+  width: 55%;
+  padding: 3.5rem 4rem 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  order: 1;
+  
+}
+
+.header .flex-col .list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+
+}
+
+.header .flex-col .list-row {
+  display: flex;
+  width: 100%;
+ gap: 0.7rem;
+  align-items: center;
+}
+
+.header .row.split .flex-col:nth-of-type(2) {
+  width: 45%;
+  order: 2;
+}
+
+
+.header .thumbnail {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: calc(var(--border-radius) - 15px)
+}
+
+.header .thumbnail::before {
+  content: "";
+  display: block;
+  padding-top: 140%;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-form .input-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-form .input-top {
+  padding-bottom: 0.5rem;
+}
+
+.input-form .form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-form .email-field {
+  width: 100%;
+  border: 1px solid var(--Grey);
+  border-radius: calc(var(--border-radius) - 10px);
+  padding: 0.8rem;
+  font-size: 0.7rem;
+  color: var(--Grey);
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+}
+
+.input-form .failed {
+  color: var(--Tomato);
+  border: 1px solid var(--Tomato);
+  background-color:  hsla(4, 100%, 67%, 0.213);
+}
+
+.input-form::placeholder {
+   color: var(--Tomato);
+}
+
+.input-form input:focus {
+  outline: none;
+}
+
+
+.input-form .error-txt {
+  color: var(--Tomato);
+  font-size: 0.6rem;
+  font-style: italic;
+}
+
+
+.btm-submit-btn {
+  padding-top: 1rem;
+  width: 100%;
+  border: 0;
+  background-color: var(--Dark-Slate-Grey);
+    border: 1px solid var(--Dark-Slate-Grey);
+   padding: 0.8rem;
+   color: var(--White);
+    font-size: 0.7rem;
+    border-radius: calc(var(--border-radius) - 10px);
+    font-family: 'Roboto Bold', sans-serif;
+    transition: var(--animation-smooth);
+}
+
+ .btm-submit-btn:hover {
+   transition: var(--animation-smooth);
+background: linear-gradient(90deg, rgb(248, 53, 115) 12%, rgba(255,98,78,1) 55%, rgba(255,125,91,1) 99%);
+  border: 0;
+}
+
+.thumbnail-mobile {
+  display: none;
+}
+
+
+
+.header .row:nth-of-type(2) {
+  background-color: var(--White);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  padding: 2rem;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  height: 100%;
+}
+
+.header .row:nth-of-type(2) .flex-col .top{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header .row:nth-of-type(2) .flex-col{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header .row:nth-of-type(2) .flex-col p span{
+  font-family: 'Roboto Bold', sans-serif;
+}
+
+
+.icon img {
+  width: auto;
+  height: 40px;
+}
+
+
+@media screen and (max-width: 1024px){
+  .header .row.split {
+    padding: 0;
+  }
+  .header .row.split .flex-col:first-child {
+    order: 2;
+    width: 100%;
+     padding: 3rem 1.5rem 3rem 1.5rem;
+  }
+
+  .header .thumbnail {
+    display: none;
+  }
+
+  .header .row.split .flex-col:nth-of-type(2) {
+    order: 1;
+    width: 100%;
+  }
+
+  .thumbnail-mobile {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: calc(var(--border-radius) - 10px); 
+  border-bottom-right-radius: calc(var(--border-radius) - 10px);;
+}
+
+.thumbnail-mobile::before {
+content: "";
+display: block;
+padding-top: 80%;
+}
+}
+
+@media screen and (max-width: 720px) {
+  .header .row:nth-of-type(2) {
+  width: 100%;
+  height: 100vh;
+  padding: 1.5rem;
+}
+
+.header .row:nth-of-type(2) .flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+ padding-top: 1rem;
+ padding-bottom: 1rem;
+}
+
+
+.header .row:nth-of-type(2) .top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 6rem;
+}
+
+.icon img {
+  width: auto;
+  height: 50px;
+}
+
+}
+
+
